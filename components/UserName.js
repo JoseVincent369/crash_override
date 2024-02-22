@@ -12,9 +12,9 @@ const Cat = props => {
 const Cafe = () => {
   return (
     <View>
-      <Cat name="Maru" />
-      <Cat name="Jellylorum" />
-      <Cat name="Spot" />
+      <Cat name="jeal" />
+      <Cat name="lloyd" />
+      <Cat name="vincent" />
     </View>
   );
 };
