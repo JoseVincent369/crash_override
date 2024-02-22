@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import HelloWorld from './components/HelloWorld';
-import UserName from './components/UserName';
 import Counter from './components/Counter';
 export default function App() {
   return (
@@ -9,6 +8,7 @@ export default function App() {
       <HelloWorld> 
       </HelloWorld>
       <StatusBar style="auto" />
+      <Counter></Counter>
     </View>
   );
 }

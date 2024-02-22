@@ -1,56 +1,42 @@
-// Counter.js
-
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-  }
+const Counter = () => {
+  const [count, setCount] = useState(0);
 
-  incrementCount = () => {
-    this.setState(prevState => ({
-      count: prevState.count + 1
-    }));
+  const increment = () => {
+    setCount(prevCount => prevCount + 1);
   };
 
-  decrementCount = () => {
-    this.setState(prevState => ({
-      count: prevState.count - 1
-    }));
+  const decrement = () => {
+    setCount(prevCount => prevCount - 1);
   };
 
-  render() {
-    const { count } = this.state;
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Count: {count}</Text>
-        <View style={styles.buttonContainer}>
-          <Button title="Increment" onPress={this.incrementCount} />
-          <Button title="Decrement" onPress={this.decrementCount} />
-        </View>
+  return (
+    <View style={styles.container}>
+      <Text style={styles.counterText}>Counter: {count}</Text>
+      <View style={styles.buttonContainer}>
+        <Button title="Increment" onPress={increment} />
+        <Button title="Decrement" onPress={decrement} />
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
-  text: {
+  counterText: {
     fontSize: 24,
     marginBottom: 20,
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '80%',
+    width: '50%',
   },
 });
 

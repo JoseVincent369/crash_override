@@ -1,14 +1,22 @@
-// UserName.js
-
 import React from 'react';
-import { View, Text } from 'react-native';
+import {Text, View} from 'react-native';
 
-const GreetUser = ({ jeal,jose,lloyd }) => {
+const Cat = props => {
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Hello, {username}!</Text>
+    <View>
+      <Text>Hello, I am jeal {props.name}!</Text>
     </View>
   );
 };
 
-export default GreetUser;
+const Cafe = () => {
+  return (
+    <View>
+      <Cat name="Maru" />
+      <Cat name="Jellylorum" />
+      <Cat name="Spot" />
+    </View>
+  );
+};
+
+export default Cafe;
